@@ -29,7 +29,7 @@ const CopyUrlButton = () => {
           />
         }
       >
-        Copy URL
+        Copy Results
       </Button>
     </Tooltip>
   );

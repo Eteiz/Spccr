@@ -41,7 +41,7 @@ const SupportedLanguagesGrid = ({ gameData }) => {
               textAlign: "center",
             }}
           >
-            <Typography variant="h5" fontSize="1.25rem">
+            <Typography variant="h5" fontSize="1rem">
               {language}
             </Typography>
           </Box>

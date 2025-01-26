@@ -107,6 +107,13 @@ const theme = createTheme({
     "0px 3px 5px 1px rgba(6, 6, 30, 1)",
   ],
   components: {
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: "#000038",
+        },
+      },
+    },
     MuiTableCell: {
       styleOverrides: {
         root: {

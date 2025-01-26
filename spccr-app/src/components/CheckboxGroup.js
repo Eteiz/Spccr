@@ -98,6 +98,7 @@ const CheckboxGroup = ({
                 />
               }
               label={label}
+              sx={{ textAlign: "left" }}
             />
           ))}
         </Grid>

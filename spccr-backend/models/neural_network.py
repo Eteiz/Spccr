@@ -76,7 +76,7 @@ def train_and_save_model(input_size):
             epoch_loss += loss.item()
         print_log(f"Epoch {epoch + 1}, Loss: {epoch_loss:.4f}")
 
-    model_path = os.path.join(MODEL_FILENAME)
+    model_path = os.path.join(os.path.dirname(__file__), MODEL_FILENAME)
     torch.save(model.state_dict(), model_path)
     print_log(f"Recommendation model saved to {model_path}")
 
@@ -86,7 +86,7 @@ def predict_best_game(filters_data, preferences_data, input_size):
     app_data = load_pickle(app_data_path)
 
     model = RecommendationNN(input_size)
-    model_path = os.path.join(MODEL_FILENAME)
+    model_path = os.path.join(os.path.dirname(__file__), MODEL_FILENAME)
     model.load_state_dict(torch.load(model_path))
     model.eval()
 
@@ -101,7 +101,11 @@ def predict_best_game(filters_data, preferences_data, input_size):
         return (intersection / union) * 100 if union != 0 else 0
 
     def has_minimum_one_match(user_vec, game_vec):
-        return (np.array(user_vec) & np.array(game_vec)).any()
+        user_vec_np = np.array(user_vec)
+        game_vec_np = np.array(game_vec)
+        if not game_vec_np.any():
+            return True
+        return (user_vec_np & game_vec_np).any()
 
     with torch.no_grad():
         for game in app_data:

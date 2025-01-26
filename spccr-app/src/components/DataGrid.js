@@ -38,7 +38,7 @@ const DataGrid = ({ gameData, fieldName }) => {
               textAlign: "center",
             }}
           >
-            <Typography variant="h5" fontSize={"1.25rem"}>
+            <Typography variant="h5" fontSize={"1rem"}>
               {item.description || "No description"}
             </Typography>
           </Box>

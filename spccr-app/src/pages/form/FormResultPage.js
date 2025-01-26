@@ -54,17 +54,6 @@ const FormResultPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  useEffect(() => {
-    ScrollReveal().clean(".scroll-reveal");
-    ScrollReveal().reveal(".scroll-reveal", {
-      distance: "50px",
-      origin: "bottom",
-      duration: 1000,
-      delay: 300,
-      reset: true,
-    });
-  }, []);
-
   const gameDetailsRef = useRef(null);
 
   const scrollToDetails = () => {
@@ -152,7 +141,6 @@ const FormResultPage = () => {
   return (
     <Container>
       <Box
-        className="scroll-reveal"
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -378,7 +366,7 @@ const FormResultPage = () => {
             return (
               <Card
                 key={item.id}
-                sx={{ width: { xs: "90%", md: "45%", lg: "30%" }, p: 2 }}
+                sx={{ width: { xs: "90%", md: "45%", lg: "29%" }, p: 2 }}
               >
                 <Box>
                   <Typography variant="h3" color="action.main">
